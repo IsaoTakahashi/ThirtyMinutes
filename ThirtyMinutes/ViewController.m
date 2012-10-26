@@ -31,4 +31,9 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+- (IBAction)ClickedButton:(id)sender {
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"you clicked button." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
+}
 @end

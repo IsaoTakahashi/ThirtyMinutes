@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebViewController.h"
 
-@interface BaseTableViewController : UITableViewController
+@interface BaseTableViewController : UITableViewController {
+    NSMutableArray* urlArray;
+}
 
 @end

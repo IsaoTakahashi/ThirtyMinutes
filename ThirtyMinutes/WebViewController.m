@@ -13,6 +13,9 @@
 @end
 
 @implementation WebViewController
+@synthesize url;
+@synthesize WebView;
+@synthesize WebIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,10 +30,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //TODO: 指定されたURLのサイトをロード
+    NSURLRequest* request = [[NSURLRequest alloc] initWithURL:url];
+    WebView.delegate = self;
+    [WebView loadRequest:request];
 }
 
 - (void)viewDidUnload
 {
+    [self setWebView:nil];
+    [self setWebIndicator:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -38,6 +48,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)webViewDidStartLoad:(UIWebView*)webView{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [WebIndicator startAnimating];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [WebIndicator stopAnimating];
 }
 
 @end

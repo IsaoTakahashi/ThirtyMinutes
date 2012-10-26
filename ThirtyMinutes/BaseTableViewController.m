@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,16 +52,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    urlArray = [[NSMutableArray alloc] init];
+    [urlArray addObject:@"http://www.apple.co.jp"];
+    [urlArray addObject:@"http://www.rakuten.co.jp"];
+    [urlArray addObject:@"http://www.travel.rakuten.co.jp"];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return urlArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,6 +72,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = (NSString*)[urlArray objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -122,6 +131,15 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark -
+#pragma mark segue
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    WebViewController* wvCtr = [segue destinationViewController];
+    int selectedRow = self.tableView.indexPathForSelectedRow.row;
+    NSString* urlString = [urlArray objectAtIndex:selectedRow];
+    wvCtr.url = [[NSURL alloc] initWithString:urlString];
 }
 
 @end

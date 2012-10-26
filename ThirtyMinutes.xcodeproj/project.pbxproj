@@ -20,6 +20,8 @@
 		4D9C7397163A85DD0090A150 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9C7378163A85DC0090A150 /* Foundation.framework */; };
 		4D9C739F163A85DD0090A150 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D9C739D163A85DD0090A150 /* InfoPlist.strings */; };
 		4D9C73A2163A85DD0090A150 /* ThirtyMinutesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C73A1163A85DD0090A150 /* ThirtyMinutesTests.m */; };
+		4D9C73AD163A881B0090A150 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C73AC163A881B0090A150 /* BaseTableViewController.m */; };
+		4D9C73B0163A8AEA0090A150 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C73AF163A8AEA0090A150 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		4D9C739E163A85DD0090A150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4D9C73A0163A85DD0090A150 /* ThirtyMinutesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirtyMinutesTests.h; sourceTree = "<group>"; };
 		4D9C73A1163A85DD0090A150 /* ThirtyMinutesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirtyMinutesTests.m; sourceTree = "<group>"; };
+		4D9C73AB163A881B0090A150 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		4D9C73AC163A881B0090A150 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		4D9C73AE163A8AEA0090A150 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		4D9C73AF163A8AEA0090A150 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,10 @@
 		4D9C737C163A85DC0090A150 /* ThirtyMinutes */ = {
 			isa = PBXGroup;
 			children = (
+				4D9C73AE163A8AEA0090A150 /* WebViewController.h */,
+				4D9C73AF163A8AEA0090A150 /* WebViewController.m */,
+				4D9C73AB163A881B0090A150 /* BaseTableViewController.h */,
+				4D9C73AC163A881B0090A150 /* BaseTableViewController.m */,
 				4D9C7385163A85DC0090A150 /* AppDelegate.h */,
 				4D9C7386163A85DC0090A150 /* AppDelegate.m */,
 				4D9C7388163A85DC0090A150 /* MainStoryboard.storyboard */,
@@ -261,6 +271,8 @@
 				4D9C7383163A85DC0090A150 /* main.m in Sources */,
 				4D9C7387163A85DC0090A150 /* AppDelegate.m in Sources */,
 				4D9C738D163A85DC0090A150 /* ViewController.m in Sources */,
+				4D9C73AD163A881B0090A150 /* BaseTableViewController.m in Sources */,
+				4D9C73B0163A8AEA0090A150 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +374,12 @@
 		4D9C73A6163A85DD0090A150 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: ISAO TAKAHASHI (KY95JE6J2Q)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThirtyMinutes/ThirtyMinutes-Prefix.pch";
 				INFOPLIST_FILE = "ThirtyMinutes/ThirtyMinutes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FDBB1436-22CA-4B68-91F4-EB28F910D14A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,10 +387,12 @@
 		4D9C73A7163A85DD0090A150 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: ISAO TAKAHASHI (KY95JE6J2Q)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThirtyMinutes/ThirtyMinutes-Prefix.pch";
 				INFOPLIST_FILE = "ThirtyMinutes/ThirtyMinutes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FDBB1436-22CA-4B68-91F4-EB28F910D14A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
