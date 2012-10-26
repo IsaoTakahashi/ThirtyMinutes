@@ -10,6 +10,7 @@
 #import "WebViewController.h"
 
 @interface BaseTableViewController : UITableViewController {
+    //URLs for being listed on each table cell
     NSMutableArray* urlArray;
 }
 

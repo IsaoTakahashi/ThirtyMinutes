@@ -31,8 +31,11 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark -
+#pragma mark Action on components of Storyboard
 
 - (IBAction)ClickedButton:(id)sender {
+    //Show Alert message
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"you clicked button." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alert show];
 }

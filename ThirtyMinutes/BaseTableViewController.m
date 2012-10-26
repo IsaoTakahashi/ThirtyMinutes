@@ -52,11 +52,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
+    // Insert URLs
     urlArray = [[NSMutableArray alloc] init];
     [urlArray addObject:@"http://www.apple.co.jp"];
     [urlArray addObject:@"http://www.rakuten.co.jp"];
     [urlArray addObject:@"http://www.travel.rakuten.co.jp"];
+    
+    //return constant value. you can return some variable when you want to create various section
     return 1;
 }
 
@@ -76,6 +78,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    //Set URL to cell' textlabel
     cell.textLabel.text = (NSString*)[urlArray objectAtIndex:indexPath.row];
     
     return cell;
@@ -135,8 +138,13 @@
 
 #pragma mark -
 #pragma mark segue
+
+//This methods is called when transition(in this case, when any cell is tapped)
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //get destination ViewController
     WebViewController* wvCtr = [segue destinationViewController];
+    
+    //set URL to destination target's property
     int selectedRow = self.tableView.indexPathForSelectedRow.row;
     NSString* urlString = [urlArray objectAtIndex:selectedRow];
     wvCtr.url = [[NSURL alloc] initWithString:urlString];

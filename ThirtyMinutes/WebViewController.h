@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface WebViewController : UIViewController<UIWebViewDelegate> {
+    //target URL
     NSURL *url;
 }
 
-@property (strong, nonatomic) NSURL *url;
-@property (weak, nonatomic) IBOutlet UIWebView *WebView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *WebIndicator;
+// there are syntax
+@property (strong, nonatomic) NSURL *url; //instance property
+@property (weak, nonatomic) IBOutlet UIWebView *WebView; //Storyboard property
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *WebIndicator; //Storyboard property
 @end
